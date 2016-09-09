@@ -235,9 +235,15 @@ public class SwitchButton extends View implements Checkable{
         drawRoundRect(canvas, color, ovalShadeOffAttrs);
         drawOval(canvas, color, ovalAttrs);
         drawOvalIn(canvas, colorIn, ovalAttrs);
-        drawCircleDot(canvas, DEFAULT_SPOT_OFF_COLOR, DEFAULT_SPOT_OFF_COLOR_IN, currentPos, ovalAttrs);
-        drawCircleDot2(canvas, DEFAULT_SPOT_OFF_COLOR, DEFAULT_SPOT_OFF_COLOR_IN, currentPos, ovalAttrs);
-        drawCircleDot3(canvas, DEFAULT_SPOT_OFF_COLOR, DEFAULT_SPOT_OFF_COLOR_IN, currentPos, ovalAttrs);
+        if(currentPos > 2.0/3){
+            drawCircleDot(canvas, DEFAULT_SPOT_OFF_COLOR, DEFAULT_SPOT_OFF_COLOR_IN, 1, ovalAttrs);
+            drawCircleDot2(canvas, DEFAULT_SPOT_OFF_COLOR, DEFAULT_SPOT_OFF_COLOR_IN, 1, ovalAttrs);
+            drawCircleDot3(canvas, DEFAULT_SPOT_OFF_COLOR, DEFAULT_SPOT_OFF_COLOR_IN, 1, ovalAttrs);
+        }else{
+            drawCircleDot(canvas, DEFAULT_SPOT_OFF_COLOR, DEFAULT_SPOT_OFF_COLOR_IN, currentPos * 3/2, ovalAttrs);
+            drawCircleDot2(canvas, DEFAULT_SPOT_OFF_COLOR, DEFAULT_SPOT_OFF_COLOR_IN, currentPos * 3/2, ovalAttrs);
+            drawCircleDot3(canvas, DEFAULT_SPOT_OFF_COLOR, DEFAULT_SPOT_OFF_COLOR_IN, currentPos * 3/2, ovalAttrs);
+        }
         if(currentPos > 0.6) {
             drawStar(canvas, DEFAULT_SPOT_OFF_COLOR_IN, currentPos);
         }
