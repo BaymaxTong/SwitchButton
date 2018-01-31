@@ -196,8 +196,8 @@ public class SwitchButton extends View implements Checkable{
         float[] rectAttrs = compRoundRectAttr(SWITCH_OFF_POS);
         drawRoundRect(canvas, switchOnColor, rectAttrs);
 
-        rectAttrs = compRoundRectAttr(currentPos);
-        drawRoundRect(canvas, switchOffColor, rectAttrs);
+//        rectAttrs = compRoundRectAttr(currentPos);    fix drawRoundRect issue  by lgyjg
+//        drawRoundRect(canvas, switchOffColor, rectAttrs);
 
         float[] ovalShadeOnAttrs = compRoundRectShadeOnAttr(currentPos * 3/2);
         float[] ovalAttrs = compOvalAttr(currentPos* 3/2);
@@ -220,7 +220,7 @@ public class SwitchButton extends View implements Checkable{
             drawRoundRect(canvas, switchOffColor, rectAttrs);
         }
 
-        rectAttrs = compRoundRectAttr(1 - currentPos);
+//        rectAttrs = compRoundRectAttr(1 - currentPos);
         drawRoundRect(canvas, switchOffColor, rectAttrs);
 
         float[] ovalAttrs;
